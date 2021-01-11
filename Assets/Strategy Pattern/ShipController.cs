@@ -34,10 +34,6 @@ public class ShipController : MonoBehaviour
                 iWeapon = gameObject.AddComponent<Bullet> ();
                 current = "Bullet";
                 break;
-                
-            default:
-                iWeapon = gameObject.AddComponent<Bullet> ();
-                break;
         }
         
     }
