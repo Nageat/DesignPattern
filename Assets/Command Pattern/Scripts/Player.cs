@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float _speed = 3.0f;
+    public float _speed = 3.0f;//Vitesse joueur 
 
     // Update is called once per frame
     void Update()
@@ -13,14 +13,14 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.Z))
         {
             ICommand moveUp = new MoveUpCommand(this.transform, _speed);
-            moveUp.Execute();
-            CommandManager.Instance.addCommand(moveUp);
+            moveUp.Execute();//Execution de la commande "Moveup" 
+            CommandManager.Instance.addCommand(moveUp);//Ajout de la commande a la liste 
         }
         else if (Input.GetKey(KeyCode.S))
         {
             ICommand moveDown = new MoveDownCommand(this.transform, _speed);
-            moveDown.Execute();
-            CommandManager.Instance.addCommand(moveDown);
+            moveDown.Execute();//Execution de la commande "Movedown" 
+            CommandManager.Instance.addCommand(moveDown);//Ajout de la commande a la liste 
 
         }
     }

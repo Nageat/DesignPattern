@@ -13,8 +13,8 @@ public class CommandManager : MonoBehaviour
                 Debug.Log("Command Manager Vide");
             return _instance;
         }
-    }
-    private List<ICommand> _commandDuffer = new List<ICommand>();
+    }//Gestion des instances 
+    private List<ICommand> _commandDuffer = new List<ICommand>();//Liste de commandes 
 
     private void Awake()
     {
@@ -27,14 +27,14 @@ public class CommandManager : MonoBehaviour
     }
     public void Rewind()
     {
-        StartCoroutine(RewindRoutine());
+        StartCoroutine(RewindRoutine());//Coroutine de Rewind 
     }
     IEnumerator RewindRoutine()
     {
         Debug.Log("Retour vers le passé...");
-        foreach(var command in Enumerable.Reverse(_commandDuffer))
+        foreach(var command in Enumerable.Reverse(_commandDuffer))//Lecture de la listes de commandes mais dans le sens contraire
         {
-            command.Undue();
+            command.Undue();//appel de Undue
             yield return new WaitForEndOfFrame();       
         }
         Debug.Log("Bienvenu dans le passé !");
